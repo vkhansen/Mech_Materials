@@ -1,6 +1,9 @@
 # Updated Mechanics of Materials Functions
 from math import pi, cos, sin, radians
 
+# Constants for consistency
+PI = pi
+
 def axial_stress(force: float, area: float) -> float:
     """
     Calculate axial stress given force (N) and cross-sectional area (m^2).
@@ -31,7 +34,7 @@ def polar_moment_of_inertia(diameter: float) -> float:
     """
     if diameter <= 0:
         raise ValueError("Diameter must be positive.")
-    return (pi * diameter**4) / 32
+    return (PI * diameter**4) / 32
 
 def bending_stress(moment: float, distance: float, moment_of_inertia: float) -> float:
     """
@@ -52,6 +55,9 @@ def moment_of_inertia_rectangle(base: float, height: float) -> float:
 def beam_deflection_point_load(load: float, length: float, modulus: float, inertia: float, position: float) -> float:
     """
     Calculate the deflection (m) of a simply supported beam under a point load.
+    
+    Deflection of a simply supported beam with point load at position x:
+    delta = (P * x^2 * (3L - x)) / (6EI), where P is load, x is position, L is length, E is modulus, and I is inertia
     """
     if position > length:
         raise ValueError("Position cannot exceed the length of the beam.")
@@ -67,10 +73,14 @@ def shear_stress(force: float, area: float) -> float:
         raise ValueError("Area must be positive.")
     return force / area
 
-def stress_transformation(sigma_x: float, sigma_y: float, tau_xy: float, theta: float):
+def stress_transformation_2D(sigma_x: float, sigma_y: float, tau_xy: float, theta: float) -> tuple[float, float]:
     """
     Calculate normal and shear stresses on a plane at an angle theta (degrees).
+    
+    If theta is not within [0, 360] degrees, it could lead to unexpected results.
     """
+    if not (0 <= theta <= 360):
+        raise ValueError("Angle theta must be between 0 and 360 degrees.")
     theta = radians(theta)
     sigma_n = (sigma_x + sigma_y) / 2 + (sigma_x - sigma_y) / 2 * cos(2 * theta) + tau_xy * sin(2 * theta)
     tau_n = -(sigma_x - sigma_y) / 2 * sin(2 * theta) + tau_xy * cos(2 * theta)
@@ -97,7 +107,7 @@ def critical_load(e_modulus: float, moment_of_inertia: float, length: float, k: 
     """
     if length <= 0 or e_modulus <= 0 or moment_of_inertia <= 0:
         raise ValueError("Column properties must be positive.")
-    return (pi**2 * e_modulus * moment_of_inertia) / (k * length)**2
+    return (PI**2 * e_modulus * moment_of_inertia) / (k * length)**2
 
 def youngs_modulus(stress: float, strain: float) -> float:
     """
@@ -108,10 +118,15 @@ def youngs_modulus(stress: float, strain: float) -> float:
     return stress / strain
 
 # Material properties dictionary
-material_properties = {
-    "steel": {"E": 2.1e11, "yield_strength": 250e6},
-    "aluminum": {"E": 69e9, "yield_strength": 55e6},
-    "concrete": {"E": 25e9, "yield_strength": 20e6},
+class Material:
+    def __init__(self, e_modulus, yield_strength):
+        self.E = e_modulus
+        self.yield_strength = yield_strength
+
+materials = {
+    "steel": Material(2.1e11, 250e6),
+    "aluminum": Material(69e9, 55e6),
+    "concrete": Material(25e9, 20e6)
 }
 
 # Example visualization function
