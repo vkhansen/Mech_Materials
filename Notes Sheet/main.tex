@@ -1,0 +1,285 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+
+\title{Mechanics of Materials: Key Formulas, Notations, and Units}
+\author{Your Name Here}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Notation and Units}
+\begin{tabular}{ll}
+    \toprule
+    Symbol & Description [Units] \\
+    \midrule
+    $P$ & Axial load [N] \\
+    $A$ & Cross-sectional area [m$^2$] \\
+    $L$ & Length of the member [m] \\
+    $E$ & Young's modulus [Pa] \\
+    $G$ & Shear modulus [Pa] \\
+    $V$ & Shear force [N] \\
+    $T$ & Torque [Nm] \\
+    $J$ & Polar moment of inertia [m$^4$] \\
+    $M$ & Bending moment [Nm] \\
+    $I$ & Area moment of inertia [m$^4$] \\
+    $\gamma$ & Shear strain [dimensionless] \\
+    $\theta$ & Angle of twist [rad] \\
+    $y$ & Distance from neutral axis [m] \\
+    $\sigma_x, \sigma_y$ & Normal stresses in $x$ and $y$ directions [Pa] \\
+    $\tau_{xy}$ & Shear stress in $xy$ plane [Pa] \\
+    $\nu$ & Poisson's ratio [dimensionless] \\
+    $\alpha$ & Coefficient of thermal expansion [K$^{-1}$] \\
+    $\sigma_z$ & Normal stress in $z$ direction [Pa] \\
+    \bottomrule
+\end{tabular}
+
+\section{Stress and Strain}
+\subsection{Normal Stress}
+\begin{equation}
+\sigma = \frac{P}{A}
+\end{equation}
+This equation relates the normal stress to the applied axial load and the cross-sectional area.
+
+\subsection{Shear Stress}
+\begin{equation}
+\tau = \frac{V}{A}
+\end{equation}
+Shear stress is calculated as the shear force divided by the area over which it acts.
+
+\subsection{Normal Strain}
+\begin{equation}
+\varepsilon = \frac{\Delta L}{L}
+\end{equation}
+Normal strain is the ratio of change in length to the original length.
+
+\section{Stress-Strain Relationships}
+\subsection{Hooke's Law}
+\begin{equation}
+\sigma = E \varepsilon
+\end{equation}
+This linear relationship describes how stress is proportional to strain within the elastic limit.
+
+\subsection{Shear Modulus}
+\begin{equation}
+\tau = G \gamma
+\end{equation}
+Shear stress is directly proportional to shear strain, with $G$ as the proportionality constant.
+
+\subsection{Generalized Hooke's Law}
+\begin{align}
+\varepsilon_x &= \frac{1}{E} \left( \sigma_x - \nu(\sigma_y + \sigma_z) \right) \\
+\gamma_{xy} &= \frac{\tau_{xy}}{G}
+\end{align}
+These equations account for the effect of Poisson's ratio in multi-axial stress states.
+
+\section{Torsion}
+\subsection{Torsional Stress}
+\begin{equation}
+\tau = \frac{T r}{J}
+\end{equation}
+Here, $r$ is the radial distance from the center of the shaft.
+
+\subsection{Angle of Twist}
+\begin{equation}
+\theta = \frac{T L}{G J}
+\end{equation}
+The angle of twist is proportional to the torque and length, inversely to the shear modulus and polar moment of inertia.
+
+\subsection{Thin-Walled Tubes (Average Shear Stress)}
+\begin{equation}
+\tau_{\text{avg}} = \frac{T}{2t A_m}
+\end{equation}
+where $t$ is the thickness of the tube wall and $A_m$ is the mean area enclosed by the centerline of the tube's cross-section.
+
+\subsection{Power in Torsion}
+\begin{equation}
+P = T \omega = 2\pi f T
+\end{equation}
+This equation shows how power is related to torque and rotational speed or frequency.
+
+\section{Beam Bending}
+\subsection{Bending Stress}
+\begin{equation}
+\sigma = \frac{M y}{I}
+\end{equation}
+Bending stress varies linearly with the distance from the neutral axis.
+
+\subsection{Unsymmetric Bending}
+\begin{align}
+\sigma &= -\frac{M_z y}{I_z} + \frac{M_y z}{I_y} \\
+\tan \alpha &= \frac{I_z}{I_y} \tan \theta
+\end{align}
+These equations account for bending in two directions, where $\alpha$ is the angle between the neutral axis and the $x$-axis.
+
+\subsection{Transverse Shear Stress}
+\begin{equation}
+\tau = \frac{VQ}{It}
+\end{equation}
+Here, $Q$ is the first moment of area about the neutral axis.
+
+\subsection{Deflection (Curvature)}
+\begin{equation}
+\frac{d^2 y}{dx^2} = \frac{M}{E I}
+\end{equation}
+This differential equation describes how deflection relates to bending moment.
+
+\section{Combined Stresses}
+\subsection{Principal Stresses}
+\begin{equation}
+\sigma_{1,2} = \frac{\sigma_x + \sigma_y}{2} \pm \sqrt{\left(\frac{\sigma_x - \sigma_y}{2}\right)^2 + \tau_{xy}^2}
+\end{equation}
+Principal stresses are calculated to find the maximum and minimum normal stresses on a plane.
+
+\subsection{Maximum Shear Stress}
+\begin{equation}
+\tau_{\text{max}} = \sqrt{\left(\frac{\sigma_x - \sigma_y}{2}\right)^2 + \tau_{xy}^2}
+\end{equation}
+This gives the maximum shear stress in a plane.
+
+\subsection{Stress Transformation}
+\begin{align}
+\sigma_x' &= \frac{\sigma_x + \sigma_y}{2} + \frac{\sigma_x - \sigma_y}{2} \cos 2\theta + \tau_{xy} \sin 2\theta \\
+\tau_{x'y'} &= -\frac{\sigma_x - \sigma_y}{2} \sin 2\theta + \tau_{xy} \cos 2\theta
+\end{align}
+These transformations help in analyzing stress on any rotated plane.
+
+\section{Mohr's Circle}
+\subsection{Center and Radius}
+\begin{equation}
+\text{Center} = \frac{\sigma_x + \sigma_y}{2}, \quad \text{Radius} = \sqrt{\left(\frac{\sigma_x - \sigma_y}{2}\right)^2 + \tau_{xy}^2}
+\end{equation}
+\textit{Note: Mohr's Circle is a graphical method used to determine stress states under transformation.}
+
+\section{Energy Methods}
+\subsection{Axial Strain Energy}
+\begin{equation}
+U = \frac{1}{2} \frac{P^2 L}{E A}
+\end{equation}
+Strain energy due to axial load.
+
+\subsection{Torsional Strain Energy}
+\begin{equation}
+U = \frac{1}{2} \frac{T^2 L}{G J}
+\end{equation}
+Energy stored due to torsion.
+
+\subsection{Strain Energy for Shear}
+\begin{equation}
+U = \int \frac{V^2}{2 G A} dx
+\end{equation}
+This is the strain energy due to shear forces along the length of a member.
+
+\section{Thin-Walled Pressure Vessels}
+\subsection{Cylinders}
+\begin{align}
+\sigma_1 &= \frac{p r}{t} \\
+\sigma_2 &= \frac{p r}{2t}
+\end{align}
+Valid for thin-walled cylinders where the wall thickness is small compared to the radius.
+
+\subsection{Spheres}
+\begin{equation}
+\sigma_1 = \sigma_2 = \frac{p r}{2t}
+\end{equation}
+For thin-walled spheres, both stresses are equal due to symmetry.
+
+\section{Additional Formulas}
+\subsection{Euler's Buckling Formula for Columns}
+\begin{equation}
+P_{cr} = \frac{\pi^2 E I}{L_e^2}
+\end{equation}
+where $L_e$ is the effective length of the column, accounting for end conditions.
+
+\subsection{Thermal Expansion Stress}
+\begin{equation}
+\sigma = E \alpha \Delta T
+\end{equation}
+where $\alpha$ is the coefficient of thermal expansion, and $\Delta T$ is the change in temperature.
+
+\subsection{Secant Formula (Advanced)}
+\begin{equation}
+\sigma_{\text{max}} = \frac{P}{A} \left( 1 + e \frac{r^2}{L^2} \sec \left( \frac{\pi L}{2r} \right) \right)
+\end{equation}
+This formula is used for columns with eccentric loading. Here, $e$ is the eccentricity of the load.
+
+\section{Dynamic Effects}
+
+\subsection{Impact Loading}
+\begin{equation}
+\sigma_{\text{impact}} = \sigma_{\text{static}} \cdot \left(1 + \sqrt{1 + \frac{2E h}{g \sigma_{\text{static}}}}\right)
+\end{equation}
+where $\sigma_{\text{impact}}$ is the stress under impact, $\sigma_{\text{static}}$ is the static stress, $h$ is the height from which the load is dropped, $g$ is the acceleration due to gravity, and $E$ is Young's modulus.
+
+\subsection{Vibration and Resonance}
+The natural frequency of a system can be calculated by:
+\begin{equation}
+f_n = \frac{1}{2\pi} \sqrt{\frac{k}{m}}
+\end{equation}
+where $f_n$ is the natural frequency, $k$ is the stiffness of the system, and $m$ is the mass.
+
+\section{Fatigue Analysis}
+
+\subsection{S-N Curve}
+The fatigue life of a material can often be described by the S-N curve:
+\begin{equation}
+N = C \left( \frac{\sigma_a}{\sigma_f} \right)^{-b}
+\end{equation}
+where $N$ is the number of cycles to failure, $\sigma_a$ is the alternating stress, $\sigma_f$ is the fatigue strength coefficient, $C$ and $b$ are material constants.
+
+\subsection{Miner's Rule for Cumulative Damage}
+For variable amplitude loading, the damage accumulation can be calculated using:
+\begin{equation}
+\sum \frac{n_i}{N_i} = D
+\end{equation}
+where $n_i$ is the number of cycles at stress level $i$, $N_i$ is the number of cycles to failure at that stress level, and $D$ is the cumulative damage (failure when $D \geq 1$).
+
+\section{Advanced Topics in Plasticity}
+
+\subsection{Ramberg-Osgood Equation}
+For materials beyond their elastic limit, the stress-strain relationship can be modeled by:
+\begin{equation}
+\epsilon = \frac{\sigma}{E} + \left( \frac{\sigma}{\sigma_0} \right)^n
+\end{equation}
+where $\epsilon$ is the total strain, $\sigma$ is the stress, $E$ is Young's modulus, $\sigma_0$ is a reference stress (often yield stress), and $n$ is the hardening exponent.
+
+\subsection{Strain Hardening}
+The true stress-true strain curve after yielding can often be approximated by:
+\begin{equation}
+\sigma = K \epsilon^n
+\end{equation}
+where $\sigma$ is the true stress, $\epsilon$ is the true strain, $K$ is the strength coefficient, and $n$ is the strain hardening exponent.
+
+\subsection{Plastic Collapse Load}
+For structures, the plastic collapse load can be determined by:
+\begin{equation}
+P_p = \sum (A_i \sigma_y)
+\end{equation}
+where $P_p$ is the plastic collapse load, $A_i$ are areas of cross-section contributing to plastic deformation, and $\sigma_y$ is the yield stress.
+
+\begin{thebibliography}{9}
+
+\bibitem{gere_goodno}
+Gere, J. M., \& Goodno, B. J. (2012). \textit{Mechanics of Materials}. Cengage Learning.
+
+\bibitem{hibbeler}
+Hibbeler, R. C. (2020). \textit{Mechanics of Materials}. Pearson.
+
+\bibitem{timoshenko}
+Timoshenko, S. (1955). \textit{Strength of Materials, Part I \& II}. D. Van Nostrand Company.
+
+\bibitem{beer_johnston}
+Beer, F. P., Johnston, E. R., DeWolf, J. T., \& Mazurek, D. F. (2015). \textit{Mechanics of Materials}. McGraw-Hill Education.
+
+\bibitem{MIT3.11}
+MIT OpenCourseWare. Mechanics of Materials (3.11). 
+\\\texttt{https://ocw.mit.edu/courses/3-11-mechanics-of-materials-fall-1999/}
+
+\end{thebibliography}
+
+\end{document}
