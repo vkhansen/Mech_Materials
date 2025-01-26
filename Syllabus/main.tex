@@ -1,19 +1,45 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
-\usepackage{amsmath}
-\usepackage{tabularx}
-\usepackage{booktabs}
-\usepackage{geometry}
-\usepackage{fancyhdr}
-\usepackage{lastpage}
-\geometry{margin=1in}
+\documentclass[12pt]{article}
 
-\title{Mechanics of Materials: Course Syllabus}
-\author{Viggo K. Hansen}
-\date{January 18, 2025}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\usepackage{graphicx}
+\usepackage{doi}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{tabularx}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Mechanics of Materials: Course Syllabus}
+\rhead{Version 1.1}
+\cfoot{\thepage}
+
+\title{\textbf{Mechanics of Materials: Course Syllabus} \newline \small{Version 1.1, Revised: \today}}
+\author{Lecturer: Viggo Hansen\\
+Faculty of Engineering, Chulalongkorn University}
+\date{Academic Year: 2024 \\ Semester: Second}
+
+\begin{document}
+
+\maketitle
+
+% Hyperlinked Table of Contents
+{
+\hypersetup{linkcolor=black} % Change link color for TOC
+\tableofcontents
+}
 
 % Define document control information
-\newcommand{\documentversion}{Version 1.0}
+\newcommand{\documentversion}{Version 1.1}
 \newcommand{\documentdate}{\today}
 
 % Setup headers and footers
@@ -25,16 +51,12 @@
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 
-\begin{document}
-
-\maketitle
-
 \begin{enumerate}
     \item \textbf{Course Number:} 2183213
     \item \textbf{Course Credit:} 3 (3-0-6)
     \item \textbf{Course Title:} Mechanics of Materials
     \item \textbf{Faculty/Department:} International School of Engineering
-    \item \textbf{Semester:} First
+    \item \textbf{Semester:} Second
     \item \textbf{Academic Year:} 2024
     \item \textbf{Instructors:}
         \begin{itemize}
@@ -140,6 +162,7 @@
 \section*{Document History}
 \begin{itemize}
     \item Version 1.0 - 01/26/2024 - Initial draft by Viggo Hansen
+    \item Version 1.1 - \today - Revised by Viggo Hansen
 \end{itemize}
 
 \end{document}
