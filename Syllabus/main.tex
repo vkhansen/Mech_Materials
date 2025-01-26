@@ -1,0 +1,146 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\geometry{margin=1in}
+
+\title{Mechanics of Materials: Course Syllabus}
+\author{Viggo K. Hansen}
+\date{January 18, 2025}
+
+% Define document control information
+\newcommand{\documentversion}{Version 1.0}
+\newcommand{\documentdate}{\today}
+
+% Setup headers and footers
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\documentversion}
+\fancyhead[R]{\documentdate}
+\fancyfoot[C]{\thepage\ of \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item \textbf{Course Number:} 2183213
+    \item \textbf{Course Credit:} 3 (3-0-6)
+    \item \textbf{Course Title:} Mechanics of Materials
+    \item \textbf{Faculty/Department:} International School of Engineering
+    \item \textbf{Semester:} First
+    \item \textbf{Academic Year:} 2024
+    \item \textbf{Instructors:}
+        \begin{itemize}
+            \item Section 1: Asst. Prof. Tawan Paphapote
+            \item Section 2: Viggo Hansen
+        \end{itemize}
+        \textbf{Office Hours:} TBA, Online only
+    \item \textbf{Conditions:}
+        \begin{itemize}
+            \item Prerequisite: 2183212
+            \item Corequisite: None
+            \item Concurrent: None
+        \end{itemize}
+    \item \textbf{Status:} Required
+    \item \textbf{Curriculum:}
+        \begin{itemize}
+            \item B.E. in Automotive Design and Manufacturing Engineering
+            \item B.E. in Robotics and AI
+        \end{itemize}
+    \item \textbf{Degree:} Bachelor's Degree
+    \item \textbf{Total Number of Hours:} 45 hours
+    \item \textbf{Course Description:} \\
+    Concept of stress and strain; stress and strain components; plane stress and plane strain; Mohr's circle of plane stress; Hooke's law and modulus of elasticity; engineering stress-strain diagrams; working stress; factor of safety; axial loading including statically indeterminate problems and temperature changes; thin-walled pressure vessels; torsion of circular shafts; statically indeterminate shafts; beam analysis including stress, deflection; Euler's formula for buckling; combined stress; theories of failure.
+    
+    \item \textbf{Course Outline:}
+        \begin{itemize}
+            \item \textbf{Objectives:}
+                \begin{enumerate}
+                    \item Determine stress and strain in simple mechanical components.
+                    \item Explain material behaviors based on mechanical properties.
+                    \item Analyze plane stress at a point, construct and apply Mohr's circle.
+                    \item Determine stress and deformation under various load types including axial, torsional, flexural, pressure vessel, and combined loading.
+                    \item Solve statically indeterminate problems using additional deformation equations.
+                    \item Calculate beam deflection including elastic curve.
+                    \item Determine buckling loads for columns with various boundary conditions.
+                \end{enumerate}
+        \end{itemize}
+
+        \textbf{Course Content:}
+
+\begin{tabularx}{\textwidth}{lXl}
+    \toprule
+    \textbf{Period} & \textbf{Topics} & \textbf{Remarks} \\
+    \midrule
+    1 & Introduction, External and internal loads, Normal and Shear stress, Allowable stress, Deformation, Strain, Tensile/Compressive tests, Stress-strain behavior, Ductile vs. Brittle materials, Hooke's law, Poisson's ratio & Chapter 1 \\
+    2 & Plane stress, Stress transformation equations, Principal stress, Maximum in-plane shear stress, Mohr's circle, Absolute maximum shear stress & Chapter 2 \\
+    3 & Deformation under axial load, Thermal stress & Chapter 3 \\
+    4 & Statically Indeterminate Members & Chapter 4 \\
+    5 & Torsion, Torsion formula & Chapter 5 \\
+    6 & Power transmission, Angle of twist, Statically indeterminate torque-loaded members & Chapter 6 \\
+    7 & Shear and Moment Diagrams & Chapter 7 \\
+    8 & Shear and Moment Diagrams (Graphical Method), Geometric properties (centroid, Q, I) & Chapter 8 \\
+    9 & Bending, Flexural formula, Shear in beams, Shear formula & Chapter 9 \\
+    10 & Elastic curve, Slope and displacement by integration & Chapter 10 \\
+    11 & Statically Indeterminate Beams by Integration & Chapter 11 \\
+    12 & Thin-Walled Pressure Vessels & Chapter 12 \\
+    13 & Combined Loadings & Chapter 13 \\
+    14 & Buckling, Critical load, Columns with various supports & Chapter 14 \\
+    \bottomrule
+\end{tabularx}
+
+\subsection*{Homework Notes:}
+\begin{itemize}
+    \item \textbf{Contributions:} Homework can be submitted as:
+        \begin{itemize}
+            \item Python functions relevant to coursework (optimizations encouraged)
+            \item Jupyter Notebooks for textbook problems or student/instructor-created problems
+            \item Corrections to existing software or content
+        \end{itemize}
+        Assignments can also be submitted as PDF or Word documents.
+    \item \textbf{Submission:} Use the Course GitHub Repository for code (MATLAB, Python, etc.). Refer to Code-First Learning slides for guidelines.
+    \item \textbf{GitHub Access:} Email your GitHub username to \href{mailto:vkhansen@eng.chula.ac.th}{vkhansen@eng.chula.ac.th} for access.
+\end{itemize}
+
+        \textbf{Method of Teaching:} Lectures, Code-first \\
+        \textbf{Teaching Media:} Class notes, Github Source Code \\
+        \textbf{Assignment through Network System:}
+        \begin{itemize}
+            \item Method: MyCourseville, Github
+            \item LMS: MyCourseville, Github
+        \end{itemize}
+
+\section*{Evaluation}
+\begin{itemize}
+    \item Weekly Quizzes (Paper-Based, 1 Note Page Allowed) based on topics from the Course Outline: 30\%
+    \item Homework Assigned Weekly via MCV (Submit as source code, PDF, to GitHub Repo): 20\%
+    \item Midterm: 20\%
+    \item Final Exam: 30\%
+\end{itemize}
+
+\textbf{Reading Lists:}
+\begin{itemize}
+    \item Required Textbook: Hibbeler, R.C., \textit{Mechanics of Materials}, Prentice Hall.
+\end{itemize}
+
+\textbf{Teacher Evaluation:}
+\begin{itemize}
+    \item Standard Chulalongkorn University Evaluation form: Lecture course (Form 04)
+    \item Continuous improvement through Program Outcomes
+    \item Discussions aimed at enhancing CU graduate qualifications.
+\end{itemize}
+\end{enumerate}
+
+\section*{Document History}
+\begin{itemize}
+    \item Version 1.0 - 01/26/2024 - Initial draft by Viggo Hansen
+\end{itemize}
+
+\end{document}
