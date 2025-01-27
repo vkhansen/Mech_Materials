@@ -7,7 +7,7 @@
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
-    filecolor=magenta,      
+    filecolor=magenta,
     urlcolor=cyan,
 }
 \usepackage{graphicx}
@@ -23,9 +23,9 @@
 \rhead{Version 1.1}
 \cfoot{\thepage}
 
-\title{\textbf{Mechanics of Materials: Course Syllabus} \newline \small{Version 1.1, Revised: \today}}
+\title{\textbf{Mechanics of Materials: Course Syllabus} \\ \small{Version 1.1, Revised: \today}}
 \author{Lecturer: Viggo Hansen\\
-Faculty of Engineering, Chulalongkorn University}
+International School of Engineering (ISE)}
 \date{Academic Year: 2024 \\ Semester: Second}
 
 \begin{document}
@@ -47,7 +47,7 @@ Faculty of Engineering, Chulalongkorn University}
 \fancyhf{}
 \fancyhead[L]{\documentversion}
 \fancyhead[R]{\documentdate}
-\fancyfoot[C]{\thepage\ of \pageref{LastPage}}
+\fancyfoot[C]{\thepage\ of \pageref{LastPage}} % This line sets up the page numbering
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 
@@ -96,9 +96,9 @@ Faculty of Engineering, Chulalongkorn University}
 
         \textbf{Course Content:}
 
-\begin{tabularx}{\textwidth}{lXl}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}Xp{2cm}}
     \toprule
-    \textbf{Period} & \textbf{Topics} & \textbf{Remarks} \\
+    \textbf{Week} & \textbf{Topics} & \textbf{Remarks} \\
     \midrule
     1 & Introduction, External and internal loads, Normal and Shear stress, Allowable stress, Deformation, Strain, Tensile/Compressive tests, Stress-strain behavior, Ductile vs. Brittle materials, Hooke's law, Poisson's ratio & Chapter 1 \\
     2 & Plane stress, Stress transformation equations, Principal stress, Maximum in-plane shear stress, Mohr's circle, Absolute maximum shear stress & Chapter 2 \\
@@ -117,6 +117,7 @@ Faculty of Engineering, Chulalongkorn University}
     \bottomrule
 \end{tabularx}
 
+
 \subsection*{Homework Notes:}
 \begin{itemize}
     \item \textbf{Contributions:} Homework can be submitted as:
@@ -125,17 +126,36 @@ Faculty of Engineering, Chulalongkorn University}
             \item Jupyter Notebooks for textbook problems or student/instructor-created problems
             \item Corrections to existing software or content
         \end{itemize}
-        Assignments can also be submitted as PDF or Word documents.
-    \item \textbf{Submission:} Use the Course GitHub Repository for code (MATLAB, Python, etc.). Refer to Code-First Learning slides for guidelines.
+        Assignments may be submitted as PDF or Word documents.
+    \item \textbf{Submission:} Use the Course GitHub Repository for code (MATLAB, Python, etc.).
     \item \textbf{GitHub Access:} Email your GitHub username to \href{mailto:vkhansen@eng.chula.ac.th}{vkhansen@eng.chula.ac.th} for access.
 \end{itemize}
 
-\textbf{Method of Teaching:} Lectures, Code-first \\
+\textbf{Method of Teaching:} Lectures \\
 \textbf{Teaching Media:} Class notes, GitHub Source Code \\
 \textbf{Assignment through Network System:}
 \begin{itemize}
-    \item Method: MyCourseville, GitHub
-    \item LMS: MyCourseville, GitHub
+    \item Method: MyCourseville
+    \item LMS: MyCourseville
+\end{itemize}
+
+\begin{itemize}
+    \item \textbf{Google Groups Mailing List:} Google Groups for discussions, updates, and Q\&A:
+        \begin{itemize}
+            \item \href{https://groups.google.com/g/mechanics-of-materials-2183213}{Admin Panel: mechanics-of-materials-2183213}
+            \item \href{mailto:mechanics-of-materials-2183213@googlegroups.com}{Email: mechanics-of-materials-2183213@googlegroups.com}
+        \end{itemize}
+    \item \textbf{GitHub Repository:} To submit HW/Source code:
+        \begin{itemize}
+            \item Direct link to \href{https://github.com/vkhansen/Mech_Materials}{Course GitHub Repo}
+            \item Open repository through \href{https://desktop.github.com/}{GitHub Desktop App}
+            \item For repository write access, email GitHub username to: \href{mailto:vkhansen@eng.chula.ac.th}{vkhansen@eng.chula.ac.th}
+        \end{itemize}
+    \item \textbf{Notebook LM:} To access and interact with the course materials in Google Notebook LM:
+        \begin{itemize}
+            \item Follow direct link: \href{https://notebooklm.google.com/notebook/eb161394-bf08-4333-b72a-5e132e2746ff}{Google Notebook LM}.
+            \item For access email: \href{mailto:vkhansen@eng.chula.ac.th}{vkhansen@eng.chula.ac.th}
+        \end{itemize}
 \end{itemize}
 
 \section*{Evaluation}
@@ -149,6 +169,7 @@ Faculty of Engineering, Chulalongkorn University}
 \textbf{Reading Lists:}
 \begin{itemize}
     \item Required Textbook: Hibbeler, R.C., \textit{Mechanics of Materials}, Prentice Hall.
+    \item Course Notebook LM: \href{https://notebooklm.google.com/notebook/eb161394-bf08-4333-b72a-5e132e2746ff}{Google Notebook LM}
 \end{itemize}
 
 \textbf{Teacher Evaluation:}
@@ -164,5 +185,5 @@ Faculty of Engineering, Chulalongkorn University}
     \item Version 1.0 - 01/26/2024 - Initial draft by Viggo Hansen
     \item Version 1.1 - \today - Revised by Viggo Hansen
 \end{itemize}
-
+\label{LastPage}
 \end{document}
