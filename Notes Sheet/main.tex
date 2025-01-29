@@ -2,9 +2,15 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{booktabs}
-
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
 \title{Mechanics of Materials: Key Formulas, Notations, and Units}
-\author{Your Name Here}
+\author{Viggo K. Hansen}
 \date{\today}
 
 \begin{document}
@@ -13,7 +19,8 @@
 
 \tableofcontents
 
-\section{Notation and Units}
+\section{\hyperref[sec:notation]{Notation and Units}}
+\label{sec:notation}
 \begin{tabular}{ll}
     \toprule
     Symbol & Description [Units] \\
@@ -280,6 +287,140 @@ Beer, F. P., Johnston, E. R., DeWolf, J. T., \& Mazurek, D. F. (2015). \textit{M
 MIT OpenCourseWare. Mechanics of Materials (3.11). 
 \\\texttt{https://ocw.mit.edu/courses/3-11-mechanics-of-materials-fall-1999/}
 
-\end{thebibliography}
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\title{Mechanics of Materials: Key Formulas, Notations, and Units}
+\author{Viggo K. Hansen}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{\hyperref[sec:notation]{Notation and Units}}
+\label{sec:notation}
+\begin{tabular}{ll}
+    \toprule
+    Symbol & Description [Units] \\
+    \midrule
+    $P$ & Axial load [N] \\
+    $A$ & Cross-sectional area [m$^2$] \\
+    $L$ & Length of the member [m] \\
+    $E$ & Young's modulus [Pa] \\
+    $G$ & Shear modulus [Pa] \\
+    $V$ & Shear force [N] \\
+    $T$ & Torque [Nm] \\
+    $J$ & Polar moment of inertia [m$^4$] \\
+    $M$ & Bending moment [Nm] \\
+    $I$ & Area moment of inertia [m$^4$] \\
+    $\gamma$ & Shear strain [dimensionless] \\
+    $\theta$ & Angle of twist [rad] \\
+    $y$ & Distance from neutral axis [m] \\
+    $\sigma_x, \sigma_y$ & Normal stresses in $x$ and $y$ directions [Pa] \\
+    $\tau_{xy}$ & Shear stress in $xy$ plane [Pa] \\
+    $\nu$ & Poisson's ratio [dimensionless] \\
+    $\alpha$ & Coefficient of thermal expansion [K$^{-1}$] \\
+    $\sigma_z$ & Normal stress in $z$ direction [Pa] \\
+    \bottomrule
+\end{tabular}
+
+\section{Stress and Strain}
+\subsection{Normal Stress}
+\begin{equation}
+\sigma = \frac{P}{A} \label{eq:normalstress}
+\end{equation}
+This equation \eqref{eq:normalstress} relates the normal stress to the applied axial load and the cross-sectional area.
+
+\subsection{Shear Stress}
+\begin{equation}
+\tau = \frac{V}{A} \label{eq:shearstress}
+\end{equation}
+Shear stress \eqref{eq:shearstress} is calculated as the shear force divided by the area over which it acts.
+
+\subsection{Normal Strain}
+\begin{equation}
+\varepsilon = \frac{\Delta L}{L} \label{eq:normalstrain}
+\end{equation}
+Normal strain \eqref{eq:normalstrain} is the ratio of change in length to the original length.
+
+\section{Stress-Strain Relationships}
+\subsection{Hooke's Law}
+\begin{equation}
+\sigma = E \varepsilon \label{eq:hooke}
+\end{equation}
+This linear relationship \eqref{eq:hooke} describes how stress is proportional to strain within the elastic limit. It assumes linear elastic behavior where the material returns to its original shape once the load is removed.
+
+\subsection{Shear Modulus}
+\begin{equation}
+\tau = G \gamma \label{eq:shearmodulus}
+\end{equation}
+Shear stress \eqref{eq:shearmodulus} is directly proportional to shear strain, with $G$ as the proportionality constant.
+
+\subsection{Generalized Hooke's Law}
+\begin{align}
+\varepsilon_x &= \frac{1}{E} \left( \sigma_x - \nu(\sigma_y + \sigma_z) \right) \label{eq:generalizedhooke1} \\
+\gamma_{xy} &= \frac{\tau_{xy}}{G} \label{eq:generalizedhooke2}
+\end{align}
+These equations \eqref{eq:generalizedhooke1}, \eqref{eq:generalizedhooke2} account for the effect of Poisson's ratio in multi-axial stress states.
+
+\section{Torsion}
+\subsection{Torsional Stress}
+\begin{equation}
+\tau = \frac{T r}{J} \label{eq:torsionalstress}
+\end{equation}
+Here, $r$ is the radial distance from the center of the shaft. Equation \eqref{eq:torsionalstress} shows how stress varies across the cross-section of a shaft under torsion.
+
+\subsection{Angle of Twist}
+\begin{equation}
+\theta = \frac{T L}{G J} \label{eq:angleoftwist}
+\end{equation}
+The angle of twist \eqref{eq:angleoftwist} is proportional to the torque and length, inversely to the shear modulus and polar moment of inertia.
+
+\subsection{Thin-Walled Tubes (Average Shear Stress)}
+\begin{equation}
+\tau_{\text{avg}} = \frac{T}{2t A_m} \label{eq:thinwalledtube}
+\end{equation}
+where $t$ is the thickness of the tube wall and $A_m$ is the mean area enclosed by the centerline of the tube's cross-section. The formula \eqref{eq:thinwalledtube} assumes a uniform distribution of stress along the wall.
+
+\subsection{Power in Torsion}
+\begin{equation}
+P = T \omega = 2\pi f T \label{eq:powerintorsion}
+\end{equation}
+This equation \eqref{eq:powerintorsion} shows how power is related to torque and rotational speed or frequency.
+
+% ... (Continue with the rest of the sections, implementing the same format for equations, adding brief explanations, examples, assumptions, and limitations)
+
+\section{Examples}
+- **Normal Stress Example:** Consider a steel rod with a cross-sectional area of 10 cm² subjected to a force of 5000 N. Using \eqref{eq:normalstress}, the stress would be $\sigma = \frac{5000 \text{ N}}{0.001 \text{ m}^2} = 5,000,000 \text{ Pa}$ or 5 MPa.
+
+- **Hooke's Law Example:** If a rubber band stretches by 5% under 100 N of force, using \eqref{eq:hooke}, you can calculate the modulus of elasticity or predict elongation under different forces.
+
+% Continues for each relevant equation
+
+\section{Assumptions and Limitations}
+- **Normal Stress:** Assumes uniform stress distribution, which isn't accurate near edges or at points of load application.
+- **Hooke's Law:** Valid only within the elastic limit; beyond this, plastic deformation occurs.
+
+% Continues for each relevant equation
+
+\section{Figures and Diagrams}
+% Here, include a diagram showing stress distribution in a beam under bending
+% \includegraphics[width=0.8\textwidth]{stress_distribution_beam.png}
+
+% Diagram showing different buckling modes of a column
+% \includegraphics[width=0.8\textwidth]{column_buckling_modes.png}
+
+% ... (Continue with bibliography and end document)
 
 \end{document}
