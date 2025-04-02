@@ -1,0 +1,210 @@
+\documentclass{beamer}
+\usetheme{default}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{xcolor} % For colored text
+
+\title{Week 10 Lecture Notes: Beam Deflections Using Double Integration}
+\subtitle{Mechanics of Materials}
+\author{Instructor: Viggo Hansen}
+\date{March 19, 2025}
+
+\begin{document}
+
+% Title Slide
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% Outline Slide
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+% Section 1: Overview
+\section{Overview}
+\begin{frame}{Week 10 Overview: Beam Deflections}
+    \begin{itemize}
+        \item Topic: Analyzing beam deflections with the \textbf{double integration method}.
+        \item Goals:
+        \begin{itemize}
+            \item Understand \textit{elastic curve}, \textit{slope}, and \textit{displacement}.
+            \item Solve common beam problems step-by-step.
+        \end{itemize}
+        \item Why it matters: Ensures safe design of structures like bridges and buildings.
+    \end{itemize}
+\end{frame}
+
+% Section 2: Introduction
+\section{Introduction}
+\begin{frame}{Introduction}
+    \begin{itemize}
+        \item Double integration: Key method to find how beams bend under loads.
+        \item Outputs: Elastic curve (shape), slope (angle), displacement (movement).
+        \item \textbf{Sign Convention}: Positive \( y \) is upward; downward deflections are negative.
+    \end{itemize}
+\end{frame}
+
+% Section 3: Theoretical Background
+\section{Theoretical Background}
+\begin{frame}{Theoretical Background}
+    \begin{itemize}
+        \item Euler-Bernoulli beam theory:
+        \[
+        EI \frac{d^2y}{dx^2} = M(x)
+        \]
+        \item \( y \): deflection, \( x \): position, \( M(x) \): bending moment.
+        \item \( E \): modulus of elasticity, \( I \): moment of inertia (second moment of area).
+        \item Double integration:
+        \begin{enumerate}
+            \item \( \frac{dy}{dx} \) (slope) from first integral.
+            \item \( y(x) \) (deflection) from second integral.
+        \end{enumerate}
+    \end{itemize}
+\end{frame}
+
+% Section 4: Steps of the Method
+\section{Steps of the Method}
+\begin{frame}{Steps of Double Integration}
+    \begin{enumerate}
+        \item Define \( M(x) \) (watch for \textcolor{red}{piecewise regions}!).
+        \item Integrate: \( EI \frac{dy}{dx} = \int M(x) \, dx + C_1 \).
+        \item Integrate again: \( EI y = \iint M(x) \, dx + C_1 x + C_2 \).
+        \item Apply boundary conditions:
+        \begin{itemize}
+            \item Pinned/Roller: \( y = 0 \), slope \( \frac{dy}{dx} \neq 0 \).
+            \item Fixed: \( y = 0 \), \( \frac{dy}{dx} = 0 \).
+        \end{itemize}
+        \item Constants \( C_1 \), \( C_2 \) depend on supports!
+    \end{enumerate}
+\end{frame}
+
+% Section 5: Examples
+\section{Examples}
+\subsection{Simply Supported Beam with Central Load}
+\begin{frame}{Example 1: Simply Supported Beam with Central Load}
+    \begin{itemize}
+        \item Setup: Length \( L \), load \( P \) at \( x = L/2 \).
+        \item \textcolor{red}{Piecewise Moment}:
+        \[
+        M(x) = \begin{cases} 
+        \frac{Px}{2}, & 0 \leq x \leq \frac{L}{2} \\
+        \frac{P(L-x)}{2}, & \frac{L}{2} < x \leq L 
+        \end{cases}
+        \]
+        \item Equation: \( EI \frac{d^2y}{dx^2} = M(x) \).
+    \end{itemize}
+    \begin{figure}
+        \centering
+        % Placeholder: https://www.thestructuralengineer.info/education/professional-examinations-preparation/calculation-examples/calculation-example-calculate-the-equation-of-the-elastic-curve
+        \caption{Elastic curve (Source: thestructuralengineer.info)}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Example 1: Solution}
+    \begin{itemize}
+        \item For \( 0 \leq x \leq L/2 \):
+        \item First integration: \( EI \frac{dy}{dx} = \frac{Px^2}{4} + C_1 \).
+        \item Second integration: \( EI y = \frac{Px^3}{12} + C_1 x + C_2 \).
+        \item Boundaries: \( y(0) = 0 \) (pin), \( y(L) = 0 \) (roller).
+        \item Solve: \( C_2 = 0 \), \( C_1 = -\frac{PL^2}{16} \) (using symmetry or full span).
+        \item Max deflection: \( \delta_{\text{max}} = -\frac{PL^3}{48EI} \) at \( x = L/2 \).
+    \end{itemize}
+    See video: \href{https://www.youtube.com/watch?v=EWhL-mixfaI}{youtube.com/watch?v=EWhL-mixfaI}
+\end{frame}
+
+\subsection{Cantilever Beam with End Load}
+\begin{frame}{Example 2: Cantilever Beam with End Load}
+    \begin{itemize}
+        \item Setup: Length \( L \), load \( P \) at free end (\( x = L \)).
+        \item Moment: \( M(x) = P(L - x) \) (single region).
+        \item Equation: \( EI \frac{d^2y}{dx^2} = P(L - x) \).
+    \end{itemize}
+    \begin{figure}
+        \centering
+        % Placeholder: https://www.thestructuralengineer.info/education/professional-examinations-preparation/calculation-examples/calculation-example-calculate-the-equation-of-the-elastic-curve
+        \caption{Cantilever deflection (Source: thestructuralengineer.info)}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Example 2: Solution}
+    \begin{itemize}
+        \item First integration: \( EI \frac{dy}{dx} = P(Lx - \frac{x^2}{2}) + C_1 \).
+        \item Second integration: \( EI y = P(\frac{Lx^2}{2} - \frac{x^3}{6}) + C_1 x + C_2 \).
+        \item Boundaries: \( y(0) = 0 \), \( \frac{dy}{dx}(0) = 0 \) (fixed end).
+        \item Solve: \( C_1 = 0 \), \( C_2 = 0 \).
+        \item Deflection at end: \( y(L) = -\frac{PL^3}{3EI} \) (downward).
+    \end{itemize}
+    See video: \href{https://www.youtube.com/watch?v=MJxIjG-32JA}{youtube.com/watch?v=MJxIjG-32JA}
+\end{frame}
+
+\subsection{Simply Supported Beam with Uniform Load}
+\begin{frame}{Example 3: Simply Supported Beam with Uniform Load}
+    \begin{itemize}
+        \item Setup: Length \( L \), uniform load \( w \).
+        \item Moment: \( M(x) = \frac{wx}{2}(L - x) \) (single region).
+        \item Equation: \( EI \frac{d^2y}{dx^2} = \frac{wx}{2}(L - x) \).
+    \end{itemize}
+    \begin{figure}
+        \centering
+        % Placeholder: https://www.thestructuralengineer.info/education/professional-examinations-preparation/calculation-examples/calculation-example-calculate-the-equation-of-the-elastic-curve
+        \caption{Uniform load deflection (Source: thestructuralengineer.info)}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Example 3: Solution}
+    \begin{itemize}
+        \item First integration: \( EI \frac{dy}{dx} = \frac{w}{2}(\frac{Lx^2}{2} - \frac{x^3}{3}) + C_1 \).
+        \item Second integration: \( EI y = \frac{w}{2}(\frac{Lx^3}{6} - \frac{x^4}{12}) + C_1 x + C_2 \).
+        \item Boundaries: \( y(0) = 0 \) (pin), \( y(L) = 0 \) (roller).
+        \item Solve: \( C_2 = 0 \), \( C_1 = -\frac{wL^3}{24} \).
+        \item Max deflection: \( \delta_{\text{max}} = -\frac{5wL^4}{384EI} \) at \( x = L/2 \).
+    \end{itemize}
+    See video: \href{https://www.youtube.com/watch?v=6l5pjdlAtlc}{youtube.com/watch?v=6l5pjdlAtlc}
+\end{frame}
+
+% Section 6: Practical Tips
+\section{Practical Tips}
+\begin{frame}{Practical Tips for Solving Problems}
+    \begin{itemize}
+        \item Sketch beam, loads, supports—label everything!
+        \item Check \( M(x) \) with equilibrium (forces/moments balance).
+        \item \textbf{Boundary Conditions}:
+        \begin{itemize}
+            \item Pinned/Roller: \( y = 0 \), slope can vary.
+            \item Fixed: \( y = 0 \), \( \frac{dy}{dx} = 0 \).
+        \end{itemize}
+        \item Watch \textcolor{red}{piecewise \( M(x) \)}—define regions clearly.
+        \item Units: \( E \) (Pa), \( I \) (m\(^4\)), \( M \) (N·m).
+    \end{itemize}
+\end{frame}
+
+% Section 7: Resources
+\section{Resources}
+\begin{frame}{Resources for Week 10}
+    \begin{itemize}
+        \item Textbook: Beam deflection chapter.
+        \item Figures: \url{https://www.thestructuralengineer.info/education/professional-examinations-preparation/calculation-examples/calculation-example-calculate-the-equation-of-the-elastic-curve}.
+        \item Videos:
+        \begin{itemize}
+            \item Ex 1: \href{https://www.youtube.com/watch?v=EWhL-mixfaI}{youtube.com/watch?v=EWhL-mixfaI}.
+            \item Ex 2: \href{https://www.youtube.com/watch?v=MJxIjG-32JA}{youtube.com/watch?v=MJxIjG-32JA}.
+            \item Ex 3: \href{https://www.youtube.com/watch?v=6l5pjdlAtlc}{youtube.com/watch?v=6l5pjdlAtlc}.
+        \end{itemize}
+        \item Office hours: Bring questions!
+    \end{itemize}
+\end{frame}
+
+% Section 8: Conclusion
+\section{Conclusion}
+\begin{frame}{Conclusion}
+    \begin{itemize}
+        \item Double integration: Step-by-step tool for beam deflections.
+        \item Classic examples: Simply supported (point/uniform load), cantilever.
+        \item Key for safe structural design.
+        \item Next week: Macaulay’s method for complex loads.
+    \end{itemize}
+\end{frame}
+
+\end{document}
